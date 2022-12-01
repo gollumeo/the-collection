@@ -13,7 +13,7 @@ let thingsILike = [
 
 const myWowCollection = [
     {
-        name: "Gollumélock",
+        Name: "Gollumélock",
         Class: "Warlock",
         Spec: "Demonology",
         Race: "Dark Iron Dwarf",
@@ -24,7 +24,7 @@ const myWowCollection = [
     },
 
     {
-        name: "Gollumémonk",
+        Name: "Gollumémonk",
         Class: "Monk",
         Spec: "Brewmaster",
         Race: "Dwarf",
@@ -35,7 +35,7 @@ const myWowCollection = [
     },
 
     {
-        name: "Gollumévok",
+        Name: "Gollumévok",
         Class: "Evoker",
         Spec: "Devastation",
         Race: "Dracthyr",
@@ -46,7 +46,7 @@ const myWowCollection = [
     },
 
     {
-        name: "Meguria",
+        Name: "Meguria",
         Class: "Priest",
         Spec: "Discipline",
         Race: "Draenei",
@@ -57,7 +57,7 @@ const myWowCollection = [
     },
 
     {
-        name: "Golluméo",
+        Name: "Golluméo",
         Class: "Shaman",
         Spec: "Enhancement",
         Race: "Troll",
@@ -80,22 +80,22 @@ function generateCards() {
     for (let character of myWowCollection) {
         // Create the article
         let article = document.createElement("article");
-        article.className = character.name;
+        article.className = character.Name;
+
+        // Create the title (character Name)
+        let title = document.createElement("h2");
+        title.innerText = character.Name;
+        title.className = "name" + " " + character.Faction;
+        article.appendChild(title);
 
         // Create the picture
         let picture = document.createElement("img");
         picture.setAttribute("alt", character.Class);
         picture.setAttribute("src", character.Icon);
-        picture.setAttribute("title", character.Class)
+        picture.setAttribute("title", character.Class);
         article.appendChild(picture);
 
-        // Create the title (character name)
-        let title = document.createElement("h2");
-        title.innerText = character.name;
-        title.className = "name";
-        article.appendChild(title);
-
-        // Create the class
+        // Create the character class
         let characterClass = document.createElement("h2");
         characterClass.innerText = character.Class;
         characterClass.className = "class";
@@ -128,11 +128,14 @@ function generateCards() {
         // Create date
         let date = document.createElement("p");
         date.className = "firstTimePlayed";
-        date.innerText = "First time played: " + character.firstTimePlayed;
+        date.setAttribute("title", "First time played");
+        date.innerText = character.firstTimePlayed;
         article.appendChild(date);
 
         section.appendChild(article);
         main.appendChild(section);
+
+
     }
 }
 
