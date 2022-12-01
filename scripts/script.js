@@ -20,6 +20,7 @@ const myWowCollection = [
         'Faction': "Alliance", // Horde or Alliance
         'Type': "DPS", // DPS, Healer or Tank
         'First Time Played': "9.2",
+        'Icon': "./assets/images/warlock.png"
     },
 
     {
@@ -30,6 +31,7 @@ const myWowCollection = [
         'Faction': "Alliance", // Horde or Alliance
         'Type': "Tank", // DPS, Healer or Tank
         'First Time Played': "9.1.5",
+        'Icon': "./assets/images/monk.png"
     },
 
     {
@@ -40,6 +42,7 @@ const myWowCollection = [
         'Faction': "Alliance", // Horde or Alliance
         'Type': "DPS", // DPS, Healer or Tank
         'First Time Played': "10.0",
+        'Icon': "./assets/images/monk.png"
     },
 
     {
@@ -50,6 +53,7 @@ const myWowCollection = [
         'Faction': "Alliance", // Horde or Alliance
         'Type': "Healer", // DPS, Healer or Tank
         'First Time Played': "9.0",
+        'Icon': "./assets/images/priest.png"
     },
 
     {
@@ -60,7 +64,7 @@ const myWowCollection = [
         'Faction': "Horde", // Horde or Alliance
         'Type': "DPS", // DPS, Healer or Tank
         'First Time Played': "8.3",
+        'Icon': "./assets/images/shaman.png"
     },
-
 
 ];
