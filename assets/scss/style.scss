@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: break-word;
+
+    h1 {
+        text-align: center;
+    }
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+.header {
+    &::after {
+        content: url(../images/wow-icon.png);
+    }
+}
