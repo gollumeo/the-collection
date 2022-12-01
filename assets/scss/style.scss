@@ -25,3 +25,15 @@ input, button, textarea, select {
         content: url(../images/wow-icon.png);
     }
 }
+
+main section {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 0 auto;
+}
+
+article {
+    border: 1px solid black;
+    // margin: 0 auto;
+}

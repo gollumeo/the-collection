@@ -21,4 +21,15 @@ input, button, textarea, select {
 
 .header::after {
   content: url(../images/wow-icon.png);
+}
+
+main section {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 0 auto;
+}
+
+article {
+  border: 1px solid black;
 }/*# sourceMappingURL=style.css.map */
