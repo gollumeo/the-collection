@@ -1,124 +1,197 @@
-$font: 'Montserrat Alternates',
-sans-serif;
+$font: "Montserrat Alternates", sans-serif;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    // width: 100%;
-    height: auto;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    overflow-wrap: break-word;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // width: 100%;
+  height: auto;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
+}
 
-    h1 {
-        text-align: center;
-        font-family: $font;
-        font-size: 2vw;
-        margin: 3vw 25vw;
-        transition: background-image  ease-in-out;
-        .gradient-text:hover {
-            background-color: #8788EE;
-            background-image: linear-gradient(45deg, #8788EE, #33937F, #0070DD, #00FF98);
-            background-size: 100%;
-            -webkit-background-clip: text;
-            -moz-background-clip: text;
-            -webkit-text-fill-color: transparent; 
-            -moz-text-fill-color: transparent;
-            
-        } 
-    }
+h1 {
+  text-align: center;
+  font-family: $font;
+  font-size: 2vw;
+  margin: 3vw 25vw;
+  transition: background-image ease-in-out;
+  .gradient-text:hover {
+    background-color: #8788ee;
+    background-image: linear-gradient(
+      45deg,
+      #8788ee,
+      #33937f,
+      #0070dd,
+      #00ff98
+    );
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
+}
 
-    header::after {
-
-        background-image: url('../images/wow-icon.png');
-        background-size: 25%;
-        display: inline-block;
-        background-repeat: no-repeat;
-        width: 50vw;
-        height: 30vh;
-        position: absolute;
-        top: 1vw;
-        left: 1vw;
-        right: 0;
-        content: "";
-        opacity: 0.5;
-        filter: grayscale(1);
-    }
+header::after {
+  background-image: url("../images/wow-icon.png");
+  background-size: 25%;
+  display: inline-block;
+  background-repeat: no-repeat;
+  width: 50vw;
+  height: 30vh;
+  position: absolute;
+  top: 1vw;
+  left: 1vw;
+  right: 0;
+  content: "";
+  opacity: 0.5;
+  filter: grayscale(1);
 }
 
 @mixin borders-top {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 
 @mixin borders-bottom {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 body {
-    background-color: rgba(179, 178, 178, 0.562);
+  background-color: rgba(179, 178, 178, 0.562);
 }
 
 main section {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    margin: 0 auto;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 article {
+  text-align: center;
+  margin-right: 2.5vw;
+  margin-left: 2.5vw;
+  margin-top: 5%;
+  font-family: $font;
+  font-size: 0.8vw;
+  @include borders-bottom();
+  @include borders-top();
+  box-shadow: 4px 4px 8px 2px;
+  flex: 25%;
+  height: 50%;
+  margin-bottom: 5%;
+  padding-bottom: 1.5vw;
+  background-image: url(../images/parchment.jpg);
+  background-size: cover;
 
-    text-align: center;
-    margin-right: 2.5vw;
-    margin-top: 5%;
-    font-family: $font;
-    font-size: .8vw;
-    @include borders-bottom();
+  img {
+    width: 40%;
+    justify-self: center;
+    margin: 0 auto;
+    margin-top: -1vw;
+    transition: all 1500ms ease-in-out;
+
+  }
+
+  .name {
+    padding: 1vw 2vw;
+    text-shadow: inset 5px 5px 0px black;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    gap: 1.2vw;
+    align-items: center;
+    justify-content: center;
+
+    .race,
+    .spec,
+    .class,
+    .faction,
+    .type,
+    .firstTimePlayed {
+      background-color: #ffffff5e;
+      @include borders-bottom();
+      @include borders-top();
+      flex: 40%;
+      width: 100%;
+      box-sizing: border-box;
+      height: 2vw;
+      box-shadow: 1px 1px 10px;
+    }
+  }
+
+  .Alliance {
+    background: radial-gradient(ellipse at top, #000ba3, transparent),
+      radial-gradient(ellipse at bottom, #3341ff, transparent);
+    background-size: cover;
     @include borders-top();
-    box-shadow: 4px 4px 8px 2px;
-    flex: 30%;
-    height: 50%;
-    margin-bottom: 5%;
-    padding-bottom: 1.5vw;
-    background-color: rgb(100, 136, 195);
+    color: rgb(163, 160, 160);
+    font-size: 1.5vw;
+  }
 
-    img {
-        width: 40%;
-        justify-self: center;
-        margin: 0 auto;
-        margin-top: -2vw;
+  .Horde {
+    background: radial-gradient(ellipse at top, #a30000, transparent),
+      radial-gradient(ellipse at bottom, #ff3333, transparent);
+    background-size: cover;
+    @include borders-top();
+    color: rgb(255, 255, 255);
+    font-size: 1.5vw;
+  }
+
+  .backwards {
+    transform: scale(1, -1);
+    margin-top: -2vw;
+    filter: blur(1%);
+    font-size: 1.5vw;
+    font-style: oblique;
+    color: rgba(126, 140, 161, 0.753);
+  }
+}
+@media screen and (max-width: 800px) {
+  article {
+    flex: 100%;
+  }
+
+  section {
+    width: 50%;
+  }
+
+  header h1 {
+    text-align: center;
+    font-family: $font;
+    font-size: 2vw;
+    margin: 3vw 25vw;
+    transition: background-image ease-in-out;
+    .gradient-text {
+      background-color: #8788ee;
+      background-image: linear-gradient(
+        45deg,
+        #8788ee,
+        #33937f,
+        #0070dd,
+        #00ff98
+      );
+      background-size: 100%;
+      background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
     }
-
-    .name {
-        padding: 1vw 2vw;
-    }
-
+  }
 }
 
-.Gollumélock {
-
-    align-content: left;
-
-    .Alliance {
-        background: -webkit-linear-gradient(-31deg, rgb(22, 80, 237), rgb(135, 136, 238));
-        background: linear-gradient(-31deg, rgb(22, 80, 237), rgb(135, 136, 238));
-        background-size: cover;
-        @include borders-top();
-
-    }
-}
-
-
-
-@media (max-width: 800px) {
-    article {
-        flex: 100%;
-    }
-
-    section {
-        width: 50%;
-    }
+article:hover img {
+  transform: scale(1.15) rotate(359deg);
+  transition: transform 1500ms ease-in-out repeat;
 }

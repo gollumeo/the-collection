@@ -69,9 +69,7 @@ const myWowCollection = [
 
 ];
 
-// function loremIpsum() {
-//     return "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi ratione saepe dolorum, assumenda obcaecati ut non dolores corporis iusto eum molestiae, esse a necessitatibus deserunt sunt ad incidunt, voluptas laudantium. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus illum accusantium natus ab corrupti quos ipsa magnam facere tenetur! Hic non dolorum quae at expedita? Commodi veritatis hic earum nihil?"
-// }
+myWowCollection.sort(() => Math.random() - 0.5);
 
 function generateCards() {
     let main = document.getElementsByTagName("main")[0];
@@ -88,6 +86,12 @@ function generateCards() {
         title.className = "name" + " " + character.Faction;
         article.appendChild(title);
 
+        //Generate the flipped shadows text
+        let flipped = document.createElement("h2");
+        flipped.innerText = character.Name;
+        flipped.className = "backwards";
+        article.appendChild(flipped);
+
         // Create the picture
         let picture = document.createElement("img");
         picture.setAttribute("alt", character.Class);
@@ -95,42 +99,52 @@ function generateCards() {
         picture.setAttribute("title", character.Class);
         article.appendChild(picture);
 
+        // create the container for the following infos
+        let container = document.createElement("div");
+        container.className = "container";
+        article.appendChild(container);
+
         // Create the character class
         let characterClass = document.createElement("h2");
         characterClass.innerText = character.Class;
         characterClass.className = "class";
-        article.appendChild(characterClass);
+        characterClass.setAttribute("title", "Class");
+        container.appendChild(characterClass);
 
         // Create the spec
-        let spec = document.createElement("h3");
+        let spec = document.createElement("h2");
         spec.innerText = character.Spec;
         spec.className = "spec";
-        article.appendChild(spec);
+        spec.setAttribute("title", "Specialization");
+        container.appendChild(spec);
 
         // Create the race pin
-        let race = document.createElement("h4")
+        let race = document.createElement("h2")
         race.innerText = character.Race;
         race.className = "race";
-        article.appendChild(race);
+        race.setAttribute("title", "Race");
+        container.appendChild(race);
 
         // Create the faction pin
-        let faction = document.createElement("h4")
+        let faction = document.createElement("h2")
         faction.innerText = character.Faction;
         faction.className = "faction";
-        article.appendChild(faction);
+        faction.setAttribute("title", "Faction");
+        container.appendChild(faction);
 
         // Create the type pin
-        let type = document.createElement("h4")
+        let type = document.createElement("h2");
         type.innerText = character.Type;
         type.className = "type";
-        article.appendChild(type);
+        type.setAttribute("title", "Type");
+        container.appendChild(type);
 
         // Create date
-        let date = document.createElement("p");
+        let date = document.createElement("h2");
         date.className = "firstTimePlayed";
         date.setAttribute("title", "First time played");
         date.innerText = character.firstTimePlayed;
-        article.appendChild(date);
+        container.appendChild(date);
 
         section.appendChild(article);
         main.appendChild(section);

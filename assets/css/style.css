@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -8,23 +7,25 @@
   -webkit-font-smoothing: antialiased;
   overflow-wrap: break-word;
 }
-* h1 {
+
+h1 {
   text-align: center;
   font-family: "Montserrat Alternates", sans-serif;
   font-size: 2vw;
   margin: 3vw 25vw;
   transition: background-image ease-in-out;
 }
-* h1 .gradient-text:hover {
-  background-color: #8788EE;
-  background-image: linear-gradient(45deg, #8788EE, #33937F, #0070DD, #00FF98);
+h1 .gradient-text:hover {
+  background-color: #8788ee;
+  background-image: linear-gradient(45deg, #8788ee, #33937f, #0070dd, #00ff98);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
-* header::after {
+
+header::after {
   background-image: url("../images/wow-icon.png");
   background-size: 25%;
   display: inline-block;
@@ -47,7 +48,7 @@ body {
 main section {
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   flex-wrap: wrap;
 }
@@ -55,46 +56,112 @@ main section {
 article {
   text-align: center;
   margin-right: 2.5vw;
+  margin-left: 2.5vw;
   margin-top: 5%;
   font-family: "Montserrat Alternates", sans-serif;
   font-size: 0.8vw;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
   box-shadow: 4px 4px 8px 2px;
-  flex: 30%;
+  flex: 25%;
   height: 50%;
   margin-bottom: 5%;
   padding-bottom: 1.5vw;
-  background-color: rgb(100, 136, 195);
+  background-image: url(../images/parchment.jpg);
+  background-size: cover;
 }
 article img {
   width: 40%;
   justify-self: center;
   margin: 0 auto;
-  margin-top: -2vw;
+  margin-top: -1vw;
+  transition: all 1500ms ease-in-out;
 }
 article .name {
   padding: 1vw 2vw;
+  text-shadow: inset 5px 5px 0px black;
 }
-
-.Gollumélock {
-  align-content: left;
+article .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  gap: 1.2vw;
+  align-items: center;
+  justify-content: center;
 }
-.Gollumélock .Alliance {
-  background: -webkit-linear-gradient(-31deg, rgb(22, 80, 237), rgb(135, 136, 238));
-  background: linear-gradient(-31deg, rgb(22, 80, 237), rgb(135, 136, 238));
+article .container .race,
+article .container .spec,
+article .container .class,
+article .container .faction,
+article .container .type,
+article .container .firstTimePlayed {
+  background-color: rgba(255, 255, 255, 0.368627451);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  flex: 40%;
+  width: 100%;
+  box-sizing: border-box;
+  height: 2vw;
+  box-shadow: 1px 1px 10px;
+}
+article .Alliance {
+  background: radial-gradient(ellipse at top, #000ba3, transparent), radial-gradient(ellipse at bottom, #3341ff, transparent);
   background-size: cover;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  color: rgb(163, 160, 160);
+  font-size: 1.5vw;
+}
+article .Horde {
+  background: radial-gradient(ellipse at top, #a30000, transparent), radial-gradient(ellipse at bottom, #ff3333, transparent);
+  background-size: cover;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  color: rgb(255, 255, 255);
+  font-size: 1.5vw;
+}
+article .backwards {
+  transform: scale(1, -1);
+  margin-top: -2vw;
+  filter: blur(1%);
+  font-size: 1.5vw;
+  font-style: oblique;
+  color: rgba(126, 140, 161, 0.753);
 }
 
-@media (max-width: 800px) {
+@media screen and (max-width: 800px) {
   article {
     flex: 100%;
   }
   section {
     width: 50%;
   }
+  header h1 {
+    text-align: center;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 2vw;
+    margin: 3vw 25vw;
+    transition: background-image ease-in-out;
+  }
+  header h1 .gradient-text {
+    background-color: #8788ee;
+    background-image: linear-gradient(45deg, #8788ee, #33937f, #0070dd, #00ff98);
+    background-size: 100%;
+    -webkit-background-clip: text;
+            background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
+}
+article:hover img {
+  transform: scale(1.15) rotate(359deg);
+  transition: transform 1500ms ease-in-out repeat;
 }/*# sourceMappingURL=style.css.map */
