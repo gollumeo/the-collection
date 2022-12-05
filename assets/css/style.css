@@ -132,7 +132,6 @@ article .backwards {
   margin-top: -2vw;
   filter: blur(1%);
   font-size: 1.5vw;
-  font-style: oblique;
   color: rgba(126, 140, 161, 0.753);
 }
 
@@ -154,8 +153,7 @@ article .backwards {
     background-color: #8788ee;
     background-image: linear-gradient(45deg, #8788ee, #33937f, #0070dd, #00ff98);
     background-size: 100%;
-    -webkit-background-clip: text;
-            background-clip: text;
+    background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
