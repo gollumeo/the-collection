@@ -154,8 +154,7 @@ article .backwards {
     background-color: #8788ee;
     background-image: linear-gradient(45deg, #8788ee, #33937f, #0070dd, #00ff98);
     background-size: 100%;
-    -webkit-background-clip: text;
-            background-clip: text;
+    background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
